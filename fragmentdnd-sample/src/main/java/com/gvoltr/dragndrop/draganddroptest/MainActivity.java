@@ -1,9 +1,11 @@
-package com.gvoltr.dragndrop;
+package com.gvoltr.dragndrop.draganddroptest;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.gvoltr.dragndrop.IDragActivity;
+import com.gvoltr.dragndrop.R;
 import com.gvoltr.fragmentdnd.DragLayer;
 import com.gvoltr.fragmentdnd.DropTarget;
 

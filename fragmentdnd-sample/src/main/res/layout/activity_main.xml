@@ -14,14 +14,14 @@
 
         <fragment
             android:id="@+id/top_fragment"
-            android:name="com.gvoltr.dragndrop.TopFragment"
+            android:name="com.gvoltr.dragndrop.draganddroptest.TopFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
         <fragment
             android:id="@+id/down_fragment"
-            android:name="com.gvoltr.dragndrop.DownFragment"
+            android:name="com.gvoltr.dragndrop.draganddroptest.DownFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>

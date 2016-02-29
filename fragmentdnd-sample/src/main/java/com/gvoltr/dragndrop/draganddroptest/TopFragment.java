@@ -1,4 +1,4 @@
-package com.gvoltr.dragndrop;
+package com.gvoltr.dragndrop.draganddroptest;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.gvoltr.dragndrop.IDragActivity;
+import com.gvoltr.dragndrop.R;
 import com.gvoltr.fragmentdnd.DropTarget;
 import com.gvoltr.fragmentdnd.OnDropListener;
 
