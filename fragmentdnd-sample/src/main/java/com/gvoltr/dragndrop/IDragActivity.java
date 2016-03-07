@@ -1,5 +1,6 @@
 package com.gvoltr.dragndrop;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.gvoltr.fragmentdnd.DropTarget;
@@ -16,5 +17,7 @@ public interface IDragActivity {
     void removeAllItemsForTag(String placeTag);
 
     void changeDataForDraggableView(View v, Object data);
+
+    RecyclerView.OnItemTouchListener getViewTouchListenerForRecyclerView();
 
 }

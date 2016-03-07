@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.gvoltr.dragndrop.MainActivity">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,32 +9,31 @@
         android:orientation="vertical">
 
         <fragment
-            android:id="@+id/top_fragment"
-            android:name="com.gvoltr.dragndrop.draganddroptest.TopFragment"
+            android:id="@+id/recycler_view_fragment"
+            android:name="com.gvoltr.dragndrop.recyclerviewtest.RecyclerViewFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"/>
 
         <fragment
             android:id="@+id/down_fragment"
-            android:name="com.gvoltr.dragndrop.draganddroptest.DownFragment"
+            android:name="com.gvoltr.dragndrop.recyclerviewtest.RecyclerViewDropAreaFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/open_recyclerview_test_btn"
+        android:id="@+id/open_base_test_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="RecyclerView test" />
+        android:layout_alignParentLeft="true"
+        android:text="Base test" />
 
     <com.gvoltr.fragmentdnd.DragLayer
         android:id="@+id/drag_layer"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </RelativeLayout>

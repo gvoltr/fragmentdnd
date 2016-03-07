@@ -396,6 +396,11 @@ public class DragLayer extends FrameLayout {
             case MotionEvent.ACTION_MOVE:
                 break;
             case MotionEvent.ACTION_DOWN:
+                // stop dragging if new touch
+                if (dragging) {
+                    endDrag();
+                    return false;
+                }
                 // Remember location of down touch
                 lastMotionX = x;
                 lastMotionY = y;
@@ -424,6 +429,11 @@ public class DragLayer extends FrameLayout {
 
         switch (action) {
             case MotionEvent.ACTION_DOWN:
+                // stop dragging if new touch
+                if (dragging) {
+                    endDrag();
+                    return false;
+                }
                 // Remember where the motion event started
                 lastMotionX = x;
                 lastMotionY = y;
@@ -487,9 +497,6 @@ public class DragLayer extends FrameLayout {
                 }
                 endDrag();
                 break;
-            case MotionEvent.ACTION_CANCEL:
-                endDrag();
-
         }
         return true;
     }
