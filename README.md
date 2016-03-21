@@ -70,7 +70,9 @@ Add any `View` from `Fragment` as draggable `View` to `DragLayer`:
     dragLayer.addDraggableView(v, tag, placeTag, data);
 ```
 
-To avoid memory leaks you need to remove all views from `Fragment` onDestroy():
+Thats all, from now you can drag views added as draggable to any drop target.
+
+To avoid memory leaks you need to remove all views from `Fragment` in onDestroy():
 ```java
     dragLayer.removeAllItemsForTag(placeTag);
 ```
