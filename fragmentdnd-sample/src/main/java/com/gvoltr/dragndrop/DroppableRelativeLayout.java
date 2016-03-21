@@ -13,7 +13,7 @@ import com.gvoltr.fragmentdnd.OnDropListener;
  */
 public class DroppableRelativeLayout extends RelativeLayout  implements DropTarget {
 
-    private OnDropListener mDropListener;
+    private OnDropListener dropListener;
 
     public DroppableRelativeLayout(Context context) {
         super(context);
@@ -29,12 +29,12 @@ public class DroppableRelativeLayout extends RelativeLayout  implements DropTarg
 
     @Override
     public void setOnDropListener(OnDropListener listener) {
-        mDropListener = listener;
+        dropListener = listener;
     }
 
     @Override
     public void onDrop(View v, String tag, String placeTag, Object dragInfo) {
-        mDropListener.onDrop(this, v, tag, placeTag, dragInfo);
+        dropListener.onDrop(this, v, tag, placeTag, dragInfo);
     }
 
     @Override
