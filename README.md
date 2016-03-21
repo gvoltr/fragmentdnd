@@ -22,10 +22,10 @@ In your `activity_layout` add DragLayer as last view :
         android:layout_height="match_parent" />
 ```
 
-Now you need to create custom `View` that implements `IDropTarget` interface, for example:
+Now you need to create custom `View` that implements `DropTarget` interface, for example:
 
 ```java
-public class DroppableRelativeLayout extends RelativeLayout implements IDropTarget {
+public class DroppableRelativeLayout extends RelativeLayout implements DropTarget {
 
     private OnDropListener dropListener;
 
@@ -64,6 +64,44 @@ Add this view to any `Fragment`, set `OnDropListener` and add it to `DragLayer`:
 ```java
     dragLayer.addDropTarget(dropTarget, placeTag);
 ```
+
+Add any `View` from `Fragment` as draggable `View` to `DragLayer`:
+```java
+    dragLayer.addDraggableView(v, tag, placeTag, data);
+```
+
+To avoid memory leaks you need to remove all views from `Fragment` onDestroy():
+```java
+    dragLayer.removeAllItemsForTag(placeTag);
+```
+
+You can change data object for `View` at any time:
+```java
+    dragLayer.changeDataForDraggableView(v, data);
+```
+
+## Enable RecyclerView 
+
+Dragging elements from `RecyclerView` is possible, all you need is to add/remove `OnItemTouchListener` provided by `DragLayer` depends on lifecycle events:
+```java
+  @Override
+    public void onStart() {
+        super.onStart();
+        if (dragActivity != null) {
+            recyclerView.addOnItemTouchListener(dragActivity.getViewTouchListenerForRecyclerView());
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (dragActivity != null) {
+            recyclerView.removeOnItemTouchListener(dragActivity.getViewTouchListenerForRecyclerView());
+        }
+    }
+```
+
+
 
 
 
