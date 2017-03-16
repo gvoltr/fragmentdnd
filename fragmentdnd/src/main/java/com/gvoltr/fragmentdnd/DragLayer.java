@@ -339,7 +339,7 @@ public class DragLayer extends FrameLayout {
             public void onAnimationEnd(Animator animation) {
                 animating = false;
                 viewForAnimations.setVisibility(GONE);
-                originator.setVisibility(VISIBLE);
+                if (originator != null) originator.setVisibility(VISIBLE);
                 endDragClear();
             }
 
